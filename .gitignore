@@ -1,0 +1,9 @@
+bin/
+build/
+iso/boot/
+*.o
+*.a
+*.iso
+*.disk
+*.bin
+build.sh'
