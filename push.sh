@@ -68,7 +68,7 @@ git add --all -- :!docs :!progs/desktop
 echo "Committing with message 'Version $new_version'..."
 git commit -m "Version $new_version"
 
-echo "Pushing to origin main (force push to overwrite remote)..."
-git push --force origin main
+echo "Pushing to origin master (force push to overwrite remote)..."
+git push --force origin main:master
 
 echo "Successfully pushed version $new_version to GitHub!"
