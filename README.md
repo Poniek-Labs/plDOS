@@ -1,7 +1,7 @@
 # plDOS
 
 plDOS is a small terminal-first DOS-style operating system written in C. It
-builds into a real GRUB multiboot ISO, boots a 32-bit freestanding kernel, and
+builds into a GRUB multiboot ISO, boots a 32-bit freestanding kernel, and
 provides a DOS-inspired shell with files, folders, users, command modules, and
 raw ATA disk persistence.
 
