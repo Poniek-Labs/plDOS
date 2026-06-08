@@ -15,6 +15,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #include "kernel_connector.h"
 
 int prog_about(int argc, char **argv);
+int prog_apps(int argc, char **argv);
 int prog_cat(int argc, char **argv);
 int prog_cd(int argc, char **argv);
 int prog_clear(int argc, char **argv);
@@ -22,7 +23,10 @@ int prog_copy(int argc, char **argv);
 int prog_del(int argc, char **argv);
 int prog_desktop(int argc, char **argv);
 int prog_disk(int argc, char **argv);
+int prog_edit(int argc, char **argv);
+int prog_cc(int argc, char **argv);
 int prog_echo(int argc, char **argv);
+int prog_git(int argc, char **argv);
 int prog_help(int argc, char **argv);
 int prog_initdisk(int argc, char **argv);
 int prog_load(int argc, char **argv);
@@ -37,11 +41,14 @@ int prog_users(int argc, char **argv);
 int prog_login(int argc, char **argv);
 int prog_logout(int argc, char **argv);
 int prog_save(int argc, char **argv);
+int prog_run(int argc, char **argv);
+int prog_wall(int argc, char **argv);
 int prog_whoami(int argc, char **argv);
 int prog_write(int argc, char **argv);
 
 static const program_t programs[] = {
     {"about", "show system information", prog_about, 1},
+    {"apps", "create, build, and run user apps", prog_apps, 1},
     {"cat", "view a file", prog_cat, 1},
     {"cd", "change directory", prog_cd, 1},
     {"clear", "clear the terminal", prog_clear, 1},
@@ -52,7 +59,10 @@ static const program_t programs[] = {
     {"rm", "delete a file or empty folder", prog_del, 1},
     {"desktop", "developer desktop experiment", prog_desktop, 0},
     {"disk", "show disk persistence status", prog_disk, 1},
+    {"edit", "edit a text file", prog_edit, 1},
+    {"cc", "compile tiny C-like programs", prog_cc, 1},
     {"echo", "print text", prog_echo, 1},
+    {"git", "local git-style versioning", prog_git, 1},
     {"help", "list commands", prog_help, 1},
     {"initdisk", "initialize persistent storage", prog_initdisk, 1},
     {"load", "load filesystem from disk", prog_load, 1},
@@ -65,12 +75,14 @@ static const program_t programs[] = {
     {"move", "move or rename a file/folder", prog_move, 1},
     {"mv", "move or rename a file/folder", prog_move, 1},
     {"pwd", "print working directory", prog_pwd, 1},
+    {"run", "run compiled tiny programs", prog_run, 1},
     {"save", "save filesystem to disk", prog_save, 1},
     {"touch", "create an empty file", prog_touch, 1},
     {"mkf", "create an empty file", prog_touch, 1},
     {"useradd", "add a user", prog_useradd, 1},
     {"userdel", "delete a user", prog_userdel, 1},
     {"users", "list users", prog_users, 1},
+    {"wall", "show kernel wall status", prog_wall, 1},
     {"whoami", "print current user", prog_whoami, 1},
     {"write", "write text to a file", prog_write, 1},
     {"wri", "write text to a file", prog_write, 1},

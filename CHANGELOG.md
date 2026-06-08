@@ -10,3 +10,6 @@
 - Added ATA disk persistence with auto-save.
 - Added kernel connector boundary for program-to-kernel requests.
 - Added GitHub-facing documentation.
+- Added `wall`, `edit`, `cc`, `run`, and local `git` commands.
+- Added `apps` workflow so users can create, build, and run apps from disk.
+- Added admin gating for sensitive disk connector requests.

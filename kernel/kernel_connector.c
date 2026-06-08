@@ -118,10 +118,19 @@ static uintptr_t kernel_connector_request(kc_request_t request, void *args) {
         case KC_REQ_FS_DISK_ENABLED:
             return fs_disk_enabled();
         case KC_REQ_FS_DISK_FORMAT:
+            if (!users_current_is_admin()) {
+                return 1;
+            }
             return fs_disk_format();
         case KC_REQ_FS_DISK_SAVE:
+            if (!users_current_is_admin()) {
+                return 1;
+            }
             return fs_disk_save();
         case KC_REQ_FS_DISK_LOAD:
+            if (!users_current_is_admin()) {
+                return 1;
+            }
             return fs_disk_load();
         case KC_REQ_DISK_STATUS:
             return (uintptr_t)disk_status();

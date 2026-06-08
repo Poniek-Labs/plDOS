@@ -108,7 +108,7 @@ int cmd_ls(int argc, char **argv) {
 
 int cmd_about(int argc, char **argv) {
     io_println("\n╔═════════════════════════════════════╗");
-    io_println("║        OpenDOS 2.0 (Microkernel)   ║");
+    io_println("║        OpenDOS 1.0 (Microkernel)   ║");
     io_println("║   A modular, educational DOS OS    ║");
     io_println("║                                     ║");
     io_println("║  Kernel-based architecture with    ║");

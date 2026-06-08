@@ -22,6 +22,10 @@ plDOS currently supports:
 - Kernel connector API between commands and private kernel services
 - In-memory filesystem with file and folder commands
 - Auto-save persistence to an attached primary ATA disk
+- Built-in text editor
+- Tiny C-like compiler and bytecode runner
+- User app workflow that compiles apps to disk without rebuilding the ISO
+- Local Git-style versioning commands
 - Basic user commands: `users`, `whoami`, `login`, `logout`, `useradd`, `userdel`
 - QEMU run target with a persistent raw data disk
 
@@ -31,6 +35,8 @@ Not implemented yet:
 - CPU privilege ring isolation
 - Paging and virtual memory
 - Dynamic ELF/program loading from disk
+- Full ANSI C compiler
+- Networked Git remotes
 - AHCI/SATA or USB storage drivers
 - Partition-aware installer
 - FAT/ext/NTFS filesystem support
@@ -74,8 +80,18 @@ Common commands inside plDOS:
 ```txt
 help    about   clear   ls      cd      pwd
 touch   mkdir   write   cat     copy    move
-del     disk    save    load    users   whoami
+del     edit    apps    cc      run     git
+wall    disk    save    load    users   whoami
 login   logout  useradd userdel
+```
+
+Example in-OS app workflow:
+
+```txt
+apps new hello
+edit /home/apps/hello.c
+apps build hello
+apps run hello
 ```
 
 Aliases include `cls`, `dir`, `mkf`, `md`, `wri`, `cp`, `mv`, and `rm`.
