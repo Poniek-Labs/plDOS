@@ -1,4 +1,5 @@
 # plDOS
+[![Stand with Ukraine](https://github.com/Poniek-Labs/stand-with-ukraine-banners/blob/main/standwithukrainebannerimg.png)](https://ukraine.ua)
 
 plDOS is a small terminal-first DOS-style operating system written in C. It
 builds into a GRUB multiboot ISO, boots a 32-bit freestanding kernel, and
